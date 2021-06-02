@@ -1,8 +1,5 @@
 package KodlamaIo.Hrms.entities.concretes;
 
-import java.util.Date;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,45 +7,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
-import KodlamaIo.Hrms.entities.abstracts.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "candidates")
-public class Candidate extends User{
+@Table(name="candidate_skills")
+public class CandidateSkills {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name="id")
 	private int id;
 	
-	@Column(name = "first_name")
-	private String firstName;
-
-	@Column(name = "last_name")
-	private String lastName;
-
-	@Column(name = "birth_date")
-	private Date birthDate;
-
-	@Column(name = "national_identity")
-	private String nationalIdentity;
+	@Column(name="programming_language")
+	@NotNull
+	@NotBlank
+	private String programmingLanguage;
 	
-	@Column(name="email_address")
-	private String email;
+	@Column(name="technologies")
+	@NotNull
+	@NotBlank
+	private String technologies;
 	
-	@Column(name="password")
-	private String password;
+	@ManyToOne()
+	@JoinColumn(name = "candidate_id")
+	private Candidate candidate;
 	
 	@ManyToOne
 	@JoinColumn(name = "cv_id")
 	private Cv cv;
-
 }

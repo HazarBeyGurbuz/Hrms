@@ -2,6 +2,7 @@ package KodlamaIo.Hrms.api.controllers;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,5 +33,6 @@ public class CandidateController {
 	public Result add(@RequestBody Candidate candidate) {
 		return this.candidateService.add(candidate);
 	}
+	
 
 }
