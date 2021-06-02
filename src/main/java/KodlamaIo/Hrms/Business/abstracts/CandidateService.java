@@ -5,9 +5,9 @@ import java.util.List;
 import KodlamaIo.Hrms.core.utilities.results.DataResult;
 import KodlamaIo.Hrms.core.utilities.results.Result;
 import KodlamaIo.Hrms.entities.concretes.Candidate;
+import KodlamaIo.Hrms.entities.dtos.CvDto;
 
 public interface CandidateService {
 	DataResult<List<Candidate>> getAll();
-
 	Result add(Candidate candidate);
 }

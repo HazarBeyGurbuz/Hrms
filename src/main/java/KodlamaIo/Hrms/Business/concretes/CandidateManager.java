@@ -13,6 +13,7 @@ import KodlamaIo.Hrms.core.utilities.results.SuccessDataResult;
 import KodlamaIo.Hrms.core.utilities.results.SuccessResult;
 import KodlamaIo.Hrms.dataAccess.abstracts.CandidateDao;
 import KodlamaIo.Hrms.entities.concretes.Candidate;
+import KodlamaIo.Hrms.entities.dtos.CvDto;
 
 @Service
 public class CandidateManager implements CandidateService {
@@ -43,6 +44,7 @@ public class CandidateManager implements CandidateService {
 		this.candidateDao.save(candidate);
 		return new SuccessResult("İş arayan başarıyla kaydedildi.");
 	}
+
 
 
 }
