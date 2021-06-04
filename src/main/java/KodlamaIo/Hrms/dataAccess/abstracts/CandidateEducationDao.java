@@ -9,5 +9,5 @@ import KodlamaIo.Hrms.entities.concretes.CandidateEducationStatus;
 
 public interface CandidateEducationDao extends JpaRepository<CandidateEducationStatus, Integer>{
 	List<CandidateEducationStatus> getAllCandidateIdByGraduationYear(int candidateId);
-   
+	List<CandidateEducationStatus> getByCandidateId(int candidateId);
 }

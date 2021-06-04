@@ -9,5 +9,7 @@ import KodlamaIo.Hrms.entities.dtos.CvDto;
 
 public interface CandidateService {
 	DataResult<List<Candidate>> getAll();
+	DataResult<List<Candidate>> getById(int candidateId);
+	DataResult<List<CvDto>> getCvByCandidate(int candidateId);
 	Result add(Candidate candidate);
 }

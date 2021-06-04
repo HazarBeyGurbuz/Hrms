@@ -39,5 +39,10 @@ public class CandidateEducationManager implements CandidateEducationService{
 	public DataResult<List<CandidateEducationStatus>> getAllCandidateIdByGraduationYear(int candidateId) {
 		return new SuccessDataResult<List<CandidateEducationStatus>>(this.candidateEducationDao.getAllCandidateIdByGraduationYear(candidateId));
 	}
+
+	@Override
+	public DataResult<List<CandidateEducationStatus>> getByCandidateId(int candidateId) {
+		return new SuccessDataResult<List<CandidateEducationStatus>>(this.candidateEducationDao.getByCandidateId(candidateId));
+	}
 	
 }

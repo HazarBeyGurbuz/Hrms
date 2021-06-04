@@ -42,4 +42,9 @@ public class CandidateExperianceManager implements CandidateExperianceService{
 		return new SuccessResult();
 	}
 
+	@Override
+	public DataResult<List<CandidateExperiance>> getByCandidateId(int candidateId) {
+		return new SuccessDataResult<List<CandidateExperiance>>(this.candidateExperianceDao.getByCandidateId(candidateId));
+	}
+
 }

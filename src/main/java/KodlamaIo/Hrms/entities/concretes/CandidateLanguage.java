@@ -13,6 +13,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +24,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="candidate_language")
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer","handler","candidate"})
 public class CandidateLanguage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,9 +46,5 @@ public class CandidateLanguage {
 	@ManyToOne()
 	@JoinColumn(name = "candidate_id")
 	private Candidate candidate;
-	
-	@ManyToOne
-	@JoinColumn(name = "cv_id")
-	private Cv cv;
 	
 }

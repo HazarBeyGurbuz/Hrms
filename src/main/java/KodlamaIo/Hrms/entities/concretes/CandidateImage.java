@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +20,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="candidate_image")
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer","handler","candidate"})
 public class CandidateImage {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -36,9 +39,5 @@ public class CandidateImage {
 	@ManyToOne()
 	@JoinColumn(name="candidate_id")
 	private Candidate candidate;
-	
-	@ManyToOne
-	@JoinColumn(name = "cv_id")
-	private Cv cv;
 	
 }
